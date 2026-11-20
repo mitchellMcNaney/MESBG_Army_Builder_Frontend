@@ -1,7 +1,10 @@
-<div>
-  @for (unit of units(); track unit.unitId){
+@for (unit of units(); track unit.unitId){
+  <div class="unit-card">
     <p>{{ unit.name }}</p>
     <p>{{ unit.points}}</p>
     <p>{{ unit.faction}}</p>
-  }
-</div>
+    <button (click)="addUnit(unit)">Add to Army</button>
+  </div>
+}
+<p>Units Selected: {{selectedUnits().length}}</p>
+<a routerLink="/">Home</a>
